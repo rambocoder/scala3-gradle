@@ -1,0 +1,29 @@
+plugins {
+    id 'scala'
+    id 'application'
+}
+
+application {
+    mainClass = 'hello.App'
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    scalaMajorVersion = '3'
+    scalaVersion = "$scalaMajorVersion.0.2"
+}
+
+dependencies {
+    // implementation "org.scala-lang:scala3-library_3:$scalaVersion"
+    // testImplementation "org.scalatest:scalatest_$scalaMajorVersion:3.2.10"
+    implementation 'org.scala-lang:scala3-library_3:3.1.2'
+    implementation 'commons-collections:commons-collections:3.2.2'
+    implementation 'io.jooby:jooby-pac4j:2.14.1'
+    testImplementation 'org.scalatest:scalatest_3:3.2.9'
+    testImplementation('org.scalatestplus:junit-4-13_3:3.2.10.0')
+    testImplementation 'junit:junit:4.13'
+    
+}
