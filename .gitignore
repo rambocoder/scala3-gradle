@@ -8,3 +8,4 @@ build
 .metals
 .clj-kondo
 .bloop
+bin

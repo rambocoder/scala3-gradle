@@ -4,7 +4,7 @@ plugins {
 }
 
 application {
-    mainClass = 'hello.App'
+    mainClass = 'hello.HelloWorld'
 }
 
 repositories {
@@ -25,5 +25,13 @@ dependencies {
     testImplementation 'org.scalatest:scalatest_3:3.2.9'
     testImplementation('org.scalatestplus:junit-4-13_3:3.2.10.0')
     testImplementation 'junit:junit:4.13'
+    
+    
+    // https://mvnrepository.com/artifact/io.d11/zhttp
+implementation 'io.d11:zhttp_3:2.0.0-RC9'
+// https://mvnrepository.com/artifact/dev.zio/zio
+implementation 'dev.zio:zio_3:2.0.0-RC6'
+
+
     
 }
