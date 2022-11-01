@@ -21,24 +21,39 @@ object HelloWorld extends ZIOAppDefault {
     Server.start(8090, app)
 }
 
-// object App {
-//   def main(args: Array[String]): Unit = {
-//     println(greeting())
-//     println(stringDivideBy("400", "0"))
-//   }
+object App {
+  def main(args: Array[String]): Unit = {
+    println(greeting())
+    println(createPerson())
+    println(stringDivideBy("400", "0"))
+  }
 
-//   def greeting(): String = "Hello, world!"
+  def createPerson(): String = {
+    val p = Person(10, "Alex", "K");
+    val p2 = p.copy(
+      firstName = "Joe"
+    );
+    return "" + p2.id + " " + p2.name
+  }
 
-//   def parseInt(str: String): Option[Int] =
-//     scala.util.Try(str.toInt).toOption
+  def greeting(): String = "Hello, world!"
 
-//   def divide(a: Int, b: Int): Option[Int] =
-//     if (b == 0) None else Some(a / b)
+  def parseInt(str: String) =
+    scala.util.Try(str.toInt).toOption
 
-//   def stringDivideBy(aStr: String, bStr: String): Option[Int] =
-//     parseInt(aStr).flatMap { aNum =>
-//       parseInt(bStr).flatMap { bNum =>
-//         divide(aNum, bNum)
-//       }
-//     }
-// }
+  def divide(a: Int, b: Int): Option[Int] =
+    if (b == 0) None else Some(a / b)
+
+  def stringDivideBy(aStr: String, bStr: String): Option[Int] =
+    parseInt(aStr).flatMap { aNum =>
+      parseInt(bStr).flatMap { bNum =>
+        divide(aNum, bNum)
+      }
+    }
+}
+
+
+case class Person(id:Int, firstName: String, lastName: String) extends Employee, Human:
+  val name: String = firstName + " " + lastName
+  val age: Int = 100
+
